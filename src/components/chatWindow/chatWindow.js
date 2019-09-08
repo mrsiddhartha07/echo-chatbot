@@ -48,6 +48,9 @@ class ChatWindow extends React.Component {
     componentDidUpdate() {
         window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
     }
+    backToLogin() {
+        window.history.back();
+    }
     render () {
         if(!this.props.connected) {
             return <div>Loading</div>;
@@ -72,6 +75,9 @@ class ChatWindow extends React.Component {
                     <form method="post" className = "d-flex" onSubmit={this.submitChatHandler}>
                         <input type="text d-block" className ="form-control" name="chatText" value={this.state.chat} required onChange={this.changeChatHandler} placeholder="Enter your message here" />
                         <button type="submit" className = "btn-secondary btn-lg ml-2">Send</button>
+                        <div>
+                            <button onClick ={()=>{this.backToLogin()}} className = "btn-primary mr-3 back-to-login">Back To Login</button>
+                        </div>
                     </form>
                     </div>
                 </div>
