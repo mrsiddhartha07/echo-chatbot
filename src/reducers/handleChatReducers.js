@@ -3,7 +3,7 @@ import {CHAT_CONNECTED, CHAT_DISCONNECTED, CHAT_ERROR, ON_MESSAGE} from "../cons
 const initialState = {
     usersChat : [],
     connected: false,
-    chatBot: "Oracle",
+    chatBot: "ChatBot",
     error: false
 }
 
